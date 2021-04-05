@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Bill {
+    int id
+    LocalDateTime date
+}
+
+class BillItem {
+    int quantity
+}
+
+class Dish {
+    int id
+    String name
+    float price
+}
+
+class Waiter {
+    int id
+    String firstName
+    String lastName
+}
+
+class Table {
+    int id
+    String name
+}
+
+class Bill {
+    int id
+    LocalDateTime date
+}
+
+Bill "1" -- "1..*" BillItem
+Dish "1" -- "0..*" BillItem
+Bill "0..*" -- "1" Waiter
+Bill "0..*" -- "1" Table
+
+@enduml
